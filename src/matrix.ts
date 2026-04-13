@@ -217,7 +217,12 @@ export class MatrixClient {
 
   async getPowerLevels(roomId: string): Promise<MatrixPowerLevels> {
     const state = await this.client.getStateEvent(roomId, "m.room.power_levels", "");
-    return state as unknown as MatrixPowerLevels;
+    const raw = state as Record<string, unknown>;
+    return {
+      users: (raw.users as Record<string, number>) ?? {},
+      users_default: typeof raw.users_default === "number" ? raw.users_default : undefined,
+      events_default: typeof raw.events_default === "number" ? raw.events_default : undefined,
+    };
   }
 
   // -- Room Management --

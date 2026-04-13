@@ -43,8 +43,8 @@ export interface MatrixRelatesTo {
 
 export interface MatrixPowerLevels {
   users: Record<string, number>;
-  users_default: number;
-  events_default: number;
+  users_default?: number;
+  events_default?: number;
 }
 
 export interface MatrixSendResponse {
