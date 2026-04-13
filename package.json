@@ -1,0 +1,35 @@
+{
+  "name": "paperclip-plugin-matrix",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Matrix integration for Paperclip — bidirectional issue bridge with reaction-based approvals",
+  "main": "./dist/index.js",
+  "paperclipPlugin": {
+    "manifest": "./dist/manifest.js",
+    "worker": "./dist/worker.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "@paperclipai/plugin-sdk": "*",
+    "@paperclipai/shared": "*"
+  },
+  "devDependencies": {
+    "@paperclipai/plugin-sdk": "^2026.403.0",
+    "@paperclipai/shared": "^2026.403.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.4"
+  },
+  "files": [
+    "dist/"
+  ],
+  "license": "MIT",
+  "author": "fa1k3",
+  "dependencies": {
+    "matrix-js-sdk": "^41.3.0"
+  }
+}
